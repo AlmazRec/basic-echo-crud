@@ -1,4 +1,4 @@
-package models
+package domain
 
 type Post struct {
 	Id    int    `json:"id"`

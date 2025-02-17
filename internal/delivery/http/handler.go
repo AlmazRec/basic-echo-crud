@@ -1,4 +1,4 @@
-package handlers
+package http
 
 type Handler struct {
 	PostHandler PostHandler

@@ -1,15 +1,15 @@
 package routes
 
 import (
-	"awesomeProject3/internal/handlers"
+	"awesomeProject3/internal/delivery/http"
 	"github.com/labstack/echo/v4"
 )
 
-func InitRoutes(e *echo.Echo, h handlers.Handler) {
+func InitRoutes(e *echo.Echo, h http.Handler) {
 	PostRoutes(e, h)
 }
 
-func PostRoutes(e *echo.Echo, h handlers.Handler) {
+func PostRoutes(e *echo.Echo, h http.Handler) {
 	e.GET("/posts", h.PostHandler.GetPosts)
 	e.GET("/posts/:id", h.PostHandler.GetPost)
 	e.POST("/posts", h.PostHandler.StorePost)

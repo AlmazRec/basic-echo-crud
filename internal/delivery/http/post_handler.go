@@ -1,7 +1,7 @@
-package handlers
+package http
 
 import (
-	"awesomeProject3/internal/models"
+	"awesomeProject3/internal/domain"
 	"awesomeProject3/internal/repositories"
 	"fmt"
 	"github.com/labstack/echo/v4"
@@ -54,7 +54,7 @@ func (h *PostHandlerImpl) GetPost(c echo.Context) error {
 }
 
 func (h *PostHandlerImpl) StorePost(c echo.Context) error {
-	var post models.Post
+	var post domain.Post
 	if err := c.Bind(&post); err != nil {
 		return c.JSON(http.StatusInternalServerError, err.Error())
 	}
@@ -74,7 +74,7 @@ func (h *PostHandlerImpl) UpdatePost(c echo.Context) error {
 		return c.JSON(http.StatusInternalServerError, err.Error())
 	}
 
-	var post models.Post
+	var post domain.Post
 	if err := c.Bind(&post); err != nil {
 		return c.JSON(http.StatusInternalServerError, err.Error())
 	}
