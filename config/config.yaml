@@ -1,0 +1,11 @@
+server:
+  host: localhost
+  port: 8080
+
+database:
+  host: localhost
+  username: Golang
+  password: dev
+  database: crud-app
+  port: 3306
+  type: mysql
